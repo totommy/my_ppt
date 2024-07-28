@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+        <link rel="stylesheet" href="plugin/math/katex.min.css">
+
+		<style>
+			.iframe{
+				display: block;
+            	margin: 0 auto;
+            	border: none;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+                <section data-markdown data-transition="slide">
+                    <textarea data-template>
+						<h1>world</h1>
+                    </textarea>
+                </section>
+
+                <section data-markdown="./slides/example.md"
+                data-separator="^\n\n\n"
+                data-separator-vertical="^\n\n"
+				data-transition="slide"
+				>
+                 
+                </section>
+                <section>
+                    <h2>The Lorenz Equations</h2>
+                    \[\begin{aligned} \dot{x} &amp; = \sigma(y-x) \\ \dot{y} &amp; = \rho x - y -
+                    xz \\ \dot{z} &amp; = -\beta z + xy \end{aligned} \]
+                </section>
+				<!--  
+				code 引入 和 高亮顯示
+				-->
+				<section><h1>code</h1></section>
+				
+				<section data-markdown data-transition="slide">
+					<textarea data-template>
+						```js [712: 1-2|3|4]
+						let a = 1;
+						let b = 2;
+						let c = x => 1 + 2 + x;
+						c(3);
+						```
+					</textarea>
+				
+				</section>
+
+				<section>Horizontal Slide</section>
+				<section>
+					<section>Vertical Slide 1</section>
+					<section>Vertical Slide 2</section>
+					<section>Vertical Slide 3</section>
+				</section>
+				
+			</div>
+		</div>
+        
+
+		<script src="dist/reveal.js"></script>
+        <script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/math/math.js"></script>
+
+		
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+                controls: true,
+				progress: true,
+				center: true,
+				slideNumber: true,
+				hash: true,
+				jumpToSlide: true,
+                
+                // Options which are passed into marked
+                // See https://marked.js.org/using_advanced#options
+                markdown: {
+                    smartypants: true,
+                    markdownPath: "./slides/example.md",
+					
+                },
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [  RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
+			});
+		</script>
+
+		<script src="socket.io/socket.io.js"></script>
+		<script src="node_modules/reveal-notes-server/client.js"></script>
+	</body>
+</html>
